@@ -27,9 +27,11 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
 
     <?php  else :?>
 
-        <div id="mail-conversation-header" class="panel-heading" style="background-color:<?= $this->theme->variable('background-color-secondary')?>">
-            <strong> <?= $this->render('_conversation_header', ['message' => $message]) ?></strong>
+        <div id="mail-conversation-header" class="panel-heading">
+            <?= $this->render('_conversation_header', ['message' => $message]) ?>
         </div>
+
+        <hr style="margin-top:0px">
 
         <div class="panel-body">
 

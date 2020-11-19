@@ -30,6 +30,11 @@ class NewMessageButton extends Widget
     public $icon = 'fa-plus';
 
     /**
+     * @var bool
+     */
+    public $iconOnly = false;
+
+    /**
      * Creates the Wall Widget
      */
     public function run()
@@ -60,6 +65,10 @@ class NewMessageButton extends Widget
 
     public function getLabel()
     {
+        if ($this->iconOnly) {
+            return '';
+        }
+
         return ($this->guid)
             ? Yii::t('MailModule.widgets_views_newMessageButton', 'Send message')
             : Yii::t('MailModule.widgets_views_newMessageButton', 'New message');

@@ -13,10 +13,10 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
 ?>
 
 <div id="mail-conversation-overview" class="panel panel-default">
-    <div class="panel-heading"  style="background-color:<?= $this->theme->variable('background-color-secondary')?>">
-        <strong><?= Yii::t('MailModule.views_mail_index', 'Conversations') ?></strong>
+    <div class="panel-heading">
+        <span><?= Yii::t('MailModule.views_mail_index', 'Conversations') ?></span>
         <?php if($canStartConversation) : ?>
-            <?= NewMessageButton::widget()?>
+            <?= NewMessageButton::widget(['icon' => 'fa-plus', 'size' => 'xs', 'iconOnly' => true])?>
         <?php endif; ?>
     </div>
 

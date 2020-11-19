@@ -7,9 +7,17 @@ use humhub\widgets\Button;
 /* @var $message \humhub\modules\mail\models\Message */
 ?>
 
-<?= Html::encode($message->title); ?>
+<div class="left">
+    <?php foreach ($message->users as $user) : ?>
+        <a href="<?= $user->getUrl(); ?>">
+            <?= Image::widget(['user' => $user, 'width' => '25', 'showTooltip' => true])?>
+        </a>
+    <?php endforeach; ?>
 
-<div class="pull-right">
+    <?= Html::encode($message->title); ?>
+</div>
+
+<div class="right">
     <?php if (count($message->users)) : ?>
         <?php if (count($message->users) != 1) : ?>
             <?= Button::primary( )
@@ -26,10 +34,5 @@ use humhub\widgets\Button;
             ?>
         <?php endif; ?>
 
-        <?php foreach ($message->users as $user) : ?>
-            <a href="<?= $user->getUrl(); ?>">
-                <?= Image::widget(['user' => $user, 'width' => '25', 'showTooltip' => true])?>
-            </a>
-        <?php endforeach; ?>
     <?php endif; ?>
 </div>
