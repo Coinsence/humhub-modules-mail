@@ -3,7 +3,6 @@
 use humhub\libs\Html;
 use humhub\modules\mail\permissions\StartConversation;
 use yii\bootstrap\ActiveForm;
-use humhub\widgets\ModalButton;
 use yii\helpers\Url;
 use humhub\modules\content\widgets\richtext\ProsemirrorRichTextEditor;
 use humhub\modules\mail\widgets\wall\ConversationEntry;
@@ -53,13 +52,6 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
                     ])->label(false); ?>
 
                     <?= Button::primary(Yii::t('MailModule.views_mail_show', 'Send'))->submit()->action('reply', $replyForm->getUrl()) ?>
-
-                    <div class="pull-right">
-
-                        <!-- Button to trigger modal to add user to conversation -->
-                        <?= ModalButton::info(Yii::t('MailModule.views_mail_show', 'Add user'))->icon('fa-plus')
-                            ->load(['/mail/mail/add-user', 'id' => $message->id])->visible($canStartConversation) ?>
-                    </div>
 
                 <?php ActiveForm::end(); ?>
             </div>
