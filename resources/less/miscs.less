@@ -27,14 +27,96 @@
 
 }
 
-
-
-
-
-
-
 .panel_users-images {
+  --img-num-1-width: 67px;
+  --img-num-2-width: 46px;
+  --img-num-3-width: 42px;
+  --img-num-4-width: 40px;
+  display: inline-grid;
+  grid-template-columns: 34px 34px;
+  grid-template-rows: 34px 34px;
 
+  &.img-num-1 {
+    .btn {
+      width: var(--img-num-1-width);
+      height: var(--img-num-1-width);
+    }
+  }
+  &.img-num-2 {
+    .btn {
+      width: var(--img-num-2-width);
+      height: var(--img-num-2-width);
+    }
+    & > *:first-child {
+      grid-column: 2 e('/') 3;
+      grid-row: 1 e('/') 2;
+      justify-self: end;
+    }
+    & > *:last-child {
+      grid-column: 1 e('/') 2;
+      grid-row: 2 e('/') 3;
+      align-self: end;
+    }
+  }
+  &.img-num-3 {
+    .btn {
+      width: var(--img-num-3-width);
+      height: var(--img-num-3-width);
+    }
+    & > *:nth-child(1) {
+      grid-column: 1 e('/') 2;
+      grid-row: 1 e('/') 2;
+    }
+    & > *:nth-child(2) {
+      grid-column: 2 e('/') 3;
+      grid-row: 1 e('/') 2;
+      justify-self: end;
+    }
+    & > *:nth-child(3) {
+      grid-column: 1 e('/') 3;
+      grid-row: 2 e('/') 3;
+      align-self: end;
+      justify-self: center;
+    }
+  }
+  &.img-num-4-or-more {
+    .btn {
+      width: var(--img-num-4-width);
+      height: var(--img-num-4-width);
+    }
+    & > *:nth-child(1) {
+      grid-column: 1 e('/') 2;
+      grid-row: 1 e('/') 2;
+    }
+    & > *:nth-child(2) {
+      grid-column: 2 e('/') 3;
+      grid-row: 1 e('/') 2;
+      justify-self: end;
+    }
+    & > *:nth-child(3) {
+      grid-column: 1 e('/') 2;
+      grid-row: 2 e('/') 3;
+      align-self: end;
+      justify-self: center;
+    }
+    & > *:nth-child(4) {
+      grid-column: 2 e('/') 3;
+      grid-row: 2 e('/') 3;
+      align-self: end;
+      justify-self: end;
+    }
+  }
+  span {
+    display: inline-block;
+  }
+  &:not(.img-num-1) span img {
+    border: 2px solid var(--li-bg-color);
+    border-radius: 50%;
+  }
+  .btn {
+    border-radius: 50%;
+    border: 2px solid var(--li-bg-color);
+  }
 }
 
 /* -------------------------------------------- */

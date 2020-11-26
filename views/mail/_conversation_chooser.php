@@ -20,7 +20,7 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
         <?php endif; ?>
     </div>
 
-    <hr style="margin-top:0px">
+    <hr>
 
     <ul id="inbox" class="media-list">
         <?php if (empty($userMessages)) : ?>

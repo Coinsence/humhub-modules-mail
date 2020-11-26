@@ -4,7 +4,6 @@ namespace humhub\modules\mail\widgets;
 
 use Yii;
 use humhub\components\Widget;
-use function foo\func;
 
 /**
  * @package humhub.modules.mail
@@ -15,6 +14,14 @@ class UsersImages extends Widget
 
     const MAX_VISIBLE_USERS_IN_HEADER = 3;
     const MAX_VISIBLE_USERS_IN_PANEL = 4;
+    const PANEL_ONE_IMAGE_WIDTH = 67;
+    const PANEL_ONE_IMAGE_CSS_CLASS = 'img-num-1';
+    const PANEL_TWO_IMAGES_WIDTH = 46;
+    const PANEL_TWO_IMAGES_CSS_CLASS = 'img-num-2';
+    const PANEL_THREE_IMAGES_WIDTH = 42;
+    const PANEL_THREE_IMAGES_CSS_CLASS = 'img-num-3';
+    const PANEL_MORE_IMAGES_WIDTH = 40;
+    const PANEL_MORE_IMAGES_CSS_CLASS = 'img-num-4-or-more';
 
     /**
      * @var array array of message users
@@ -35,6 +42,16 @@ class UsersImages extends Widget
      * @var int number of excessive users
      */
     private $excessiveUsersNumber;
+
+    /**
+     * @var string class to be used in relation with imageWidth
+     */
+    private $cssClass;
+
+    /**
+     * @var int width of the user image to be generated
+     */
+    private $imageWidth;
 
     /**
      * @inheritdoc
@@ -60,7 +77,7 @@ class UsersImages extends Widget
 
         $this->excessiveUsersNumber = count($this->users);
 
-        if (isset($randomCount)) {
+        if (isset($randomCount) && $randomCount > 0) {
             if ($randomCount > 1) {
                 $randomKeys = array_rand($this->users, $randomCount);
             } else {
@@ -89,10 +106,38 @@ class UsersImages extends Widget
             ]);
         }
         if ($this->type == 'panel') {
+            $count = count($this->users);
+            if ($this->excessiveUsersNumber && $this->excessiveUsersNumber > 0) {
+                $count += 1;
+            }
+            switch ($count) {
+                case 0:
+                    return;
+                case 1:
+                    $this->cssClass = self::PANEL_ONE_IMAGE_CSS_CLASS;
+                    $this->imageWidth = self::PANEL_ONE_IMAGE_WIDTH;
+                    break;
+                case 2:
+                    $this->cssClass = self::PANEL_TWO_IMAGES_CSS_CLASS;
+                    $this->imageWidth = self::PANEL_TWO_IMAGES_WIDTH;
+                    break;
+                case 3:
+                    $this->cssClass = self::PANEL_THREE_IMAGES_CSS_CLASS;
+                    $this->imageWidth = self::PANEL_THREE_IMAGES_WIDTH;
+                    break;
+                default:
+                    $this->cssClass = self::PANEL_MORE_IMAGES_CSS_CLASS;
+                    $this->imageWidth = self::PANEL_MORE_IMAGES_WIDTH;
+                    break;
+            }
+
             return $this->render('usersImages_Panel', [
+                'users' => $this->users,
+                'excessiveUsersNum' => $this->excessiveUsersNumber,
+                'cssClass' => $this->cssClass,
+                'imageWidth' => $this->imageWidth
             ]);
         }
-
     }
 
 }

@@ -30,7 +30,7 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
             <?= $this->render('_conversation_header', ['message' => $message]) ?>
         </div>
 
-        <hr style="margin-top:0px">
+        <hr>
 
         <div class="panel-body">
 

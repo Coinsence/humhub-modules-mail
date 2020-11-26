@@ -1,0 +1,63 @@
+
+/* -------------------------------------------- */
+/* message preview styling */
+/* -------------------------------------------- */
+
+li {
+
+  padding: 15px 22px;
+  border-left: none;
+  --li-bg-color: #fff;
+
+  &:hover,
+  &.selected {
+    --li-bg-color: #e2f5fd;
+    background-color: var(--li-bg-color);
+    border-left: none;
+  }
+
+  .media {
+    display: flex;
+    align-items: center;
+
+    .media-heading {
+      display: flex;
+      align-items: center;
+    }
+
+    .media-heading .text {
+      flex-grow: 1;
+    }
+
+    .media-left, .media > .pull-left {
+      margin-right: 28px;
+    }
+
+    .sep {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0 12px;
+      color: #b9b9b9;
+    }
+
+    h4,
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 19px;
+      color: #000;
+    }
+    h4 {
+      font-weight: 600;
+    }
+    p {
+      font-weight: 400;
+    }
+  }
+
+
+
+}
+
+
+/* -------------------------------------------- */
