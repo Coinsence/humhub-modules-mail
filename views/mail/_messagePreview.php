@@ -7,10 +7,8 @@
  */
 
 use yii\helpers\Html;
-use humhub\widgets\TimeAgo;
 use humhub\libs\Helpers;
 use yii\helpers\Url;
-use humhub\widgets\Label;
 use humhub\modules\mail\widgets\UsersImages as UsersImages;
 use humhub\modules\mail\widgets\MessageTime;
 
@@ -26,9 +24,7 @@ $message = $userMessage->message;
         <a href="#" class="mail-link" data-action-click="mail.wall.loadMessage" data-action-url="<?= Url::to(['/mail/mail', 'id' => $message->id])?>" data-message-id="<?= $message->id ?>">
             <div class="media">
                 <div class="media-left pull-left">
-                    <?= UsersImages::widget(['type' => 'panel', 'users' => $message->users]) ?>
-                    <?= Label::info()
-                        ->cssClass('new-message-badge')->style((!$userMessage->isUnread() ? 'display:none' : '')); ?>
+                    <?= UsersImages::widget(['type' => 'panel', 'users' => $message->users, 'isUnread' => $userMessage->isUnread()]) ?>
                 </div>
 
                 <div class="media-body text-break">

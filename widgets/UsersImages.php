@@ -39,6 +39,11 @@ class UsersImages extends Widget
     public $type;
 
     /**
+     * @var bool if user message is read or not
+     */
+    public $isUnread;
+
+    /**
      * @var int number of excessive users
      */
     private $excessiveUsersNumber;
@@ -133,6 +138,7 @@ class UsersImages extends Widget
 
             return $this->render('usersImages_Panel', [
                 'users' => $this->users,
+                'isUnread' => $this->isUnread,
                 'excessiveUsersNum' => $this->excessiveUsersNumber,
                 'cssClass' => $this->cssClass,
                 'imageWidth' => $this->imageWidth
