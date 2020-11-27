@@ -16,7 +16,7 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
     <div class="panel-heading">
         <span><?= Yii::t('MailModule.views_mail_index', 'Conversations') ?></span>
         <?php if($canStartConversation) : ?>
-            <?= NewMessageButton::widget(['icon' => 'fa-plus', 'size' => 'xs', 'iconOnly' => true])?>
+            <?= NewMessageButton::widget(['icon' => 'fa-plus', 'size' => 'xs', 'iconOnly' => true, 'cssClass' => 'new-message-button'])?>
         <?php endif; ?>
     </div>
 

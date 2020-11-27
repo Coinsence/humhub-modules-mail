@@ -84,25 +84,7 @@
   font-size: 16px;
   line-height: 22px;
   padding: 21px 22px;
-}
-.mail .chooser .panel-heading .btn {
-  position: relative;
-  padding: 4px 12px;
-  border-radius: 50%;
-}
-.mail .chooser .panel-heading .btn:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  border-top: 8px solid #3cbeef;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  transform: rotate(22deg) skew(-14deg);
-}
-.mail .chooser .panel-heading .btn:hover:after,
-.mail .chooser .panel-heading .btn:focus:after {
-  border-top-color: #24b6ed;
+  color: #1c1c1c;
 }
 .mail .chooser .media-list {
   /* -------------------------------------------- */
@@ -196,6 +178,29 @@
 .mail hr {
   margin: 0;
   border-top-color: #d4d4d4;
+}
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* newMessageButton widget styling */
+/* -------------------------------------------- */
+.btn.new-message-button {
+  position: relative;
+  padding: 4px 12px;
+  border-radius: 50%;
+}
+.btn.new-message-button:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  border-top: 8px solid #3cbeef;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  transform: rotate(22deg) skew(-14deg);
+}
+.btn.new-message-button:hover:after,
+.btn.new-message-button:focus:after {
+  border-top-color: #24b6ed;
 }
 /* -------------------------------------------- */
 /* -------------------------------------------- */
@@ -321,6 +326,100 @@
 }
 .panel_users-images .label:empty {
   display: inline-block;
+}
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* notification widget styling */
+/* -------------------------------------------- */
+#dropdown-messages {
+  width: 343px !important;
+  margin-left: -158px !important;
+  padding: 0;
+  border-radius: 8px;
+  border: solid 1px #e9e9e9;
+}
+#dropdown-messages .dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+  padding: 18px 22px;
+  color: #1c1c1c;
+}
+#dropdown-messages .dropdown-header .arrow {
+  top: -11px;
+}
+#dropdown-messages .media-list {
+  /* -------------------------------------------- */
+  /* message preview styling */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+}
+#dropdown-messages .media-list li {
+  padding: 15px 22px;
+  border-left: none;
+  --li-bg-color: #fff;
+}
+#dropdown-messages .media-list li:hover,
+#dropdown-messages .media-list li.selected {
+  --li-bg-color: #e2f5fd;
+  background-color: var(--li-bg-color);
+  border-left: none;
+}
+#dropdown-messages .media-list li .media {
+  display: flex;
+  align-items: center;
+}
+#dropdown-messages .media-list li .media .media-heading {
+  display: flex;
+  align-items: center;
+}
+#dropdown-messages .media-list li .media .media-heading .text {
+  flex-grow: 1;
+}
+#dropdown-messages .media-list li .media .media-left,
+#dropdown-messages .media-list li .media .media > .pull-left {
+  margin-right: 28px;
+}
+#dropdown-messages .media-list li .media .sep {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 12px;
+  color: #b9b9b9;
+}
+#dropdown-messages .media-list li .media h4,
+#dropdown-messages .media-list li .media p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000;
+}
+#dropdown-messages .media-list li .media h4 {
+  font-weight: 600;
+}
+#dropdown-messages .media-list li .media p {
+  font-weight: 400;
+}
+#dropdown-messages li:last-child {
+  margin-bottom: 0;
+}
+#dropdown-messages .dropdown-footer {
+  margin: 0;
+}
+#dropdown-messages .dropdown-footer .btn {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 19px;
+  padding: 18px 0;
+  border: none;
+  border-radius: 0;
+  color: #1c1c1c;
+}
+#dropdown-messages hr {
+  margin: 0;
+  border-top-color: #d4d4d4;
 }
 /* -------------------------------------------- */
 /* -------------------------------------------- */

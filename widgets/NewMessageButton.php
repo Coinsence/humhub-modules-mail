@@ -35,11 +35,17 @@ class NewMessageButton extends Widget
     public $iconOnly = false;
 
     /**
+     * @var string
+     */
+    public $cssClass = '';
+
+    /**
      * Creates the Wall Widget
      */
     public function run()
     {
         $button = ModalButton::info($this->getLabel())->load(['/mail/mail/create', 'ajax' => 1, 'userGuid' => $this->guid]);
+        $button = $button->cssClass($this->cssClass);
 
         if($this->icon) {
             $button->icon($this->icon);

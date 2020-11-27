@@ -1,0 +1,28 @@
+
+/* -------------------------------------------- */
+/* newMessageButton widget styling */
+/* -------------------------------------------- */
+
+.btn.new-message-button {
+  position: relative;
+  padding: 4px 12px;
+  border-radius: 50%;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    border-top: 8px solid @button-info-bg-color;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    transform: rotate(22deg) skew(-14deg);
+  }
+  &:hover:after,
+  &:focus:after {
+    border-top-color: darken(@button-info-bg-color, 5%);
+  }
+}
+
+/* -------------------------------------------- */
+
+
