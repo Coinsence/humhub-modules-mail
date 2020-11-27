@@ -125,6 +125,23 @@
   display: flex;
   align-items: center;
 }
+.mail .chooser .media-list li .media .media-left {
+  position: relative;
+}
+.mail .chooser .media-list li .media .label {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 1px solid var(--li-bg-color);
+  border-radius: 50%;
+}
+.mail .chooser .media-list li .media .label:empty {
+  display: inline-block;
+}
 .mail .chooser .media-list li .media .media-heading {
   display: flex;
   align-items: center;
