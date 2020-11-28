@@ -129,13 +129,19 @@
   margin: 0;
   font-size: 14px;
   line-height: 19px;
-  color: #000;
 }
 .mail .chooser .media-list li .media h4 {
   font-weight: 600;
+  color: #000;
 }
 .mail .chooser .media-list li .media p {
   font-weight: 400;
+  color: #4b4b4b;
+}
+.mail .chooser .media-list li .media .time {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
 }
 .mail .messages .panel-heading {
   font-weight: 600;
@@ -162,6 +168,118 @@
   font-size: 14px;
   line-height: 19px;
   margin-right: 10px;
+}
+.mail .messages .panel-body {
+  padding: 18px 22px;
+}
+.mail .messages .media-list {
+  padding-top: 18px;
+  margin-bottom: 50px;
+}
+.mail .messages .media-list li {
+  padding: 0;
+  border: none;
+}
+.mail .messages .media-list .date-divider {
+  position: sticky;
+  top: 0;
+  margin: 16px 0;
+}
+.mail .messages .media-list .date-divider hr {
+  color: #d4d4d4;
+}
+.mail .messages .media-list .date-divider small {
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 0 62px;
+  background-color: #fff;
+}
+.mail .messages .media-list .media {
+  position: relative;
+  overflow: visible;
+}
+.mail .messages .media-list .user-image {
+  margin-top: 21px;
+  margin-right: 18px;
+}
+.mail .messages .media-list .media.me .media-body .content {
+  margin-right: 49px;
+  background-color: #3cbeef;
+}
+.mail .messages .media-list .media.me .media-body .content p {
+  color: #fff;
+}
+.mail .messages .media-list .media.me .media-body .content .time {
+  color: #9edff7;
+}
+.mail .messages .media-list .media.other .media-body .content {
+  background-color: #f2f2f2;
+}
+.mail .messages .media-list .media.other .media-body .content p {
+  color: #4b4b4b;
+}
+.mail .messages .media-list .media.other .media-body .content .time {
+  color: #828282;
+}
+.mail .messages .media-list .media-body {
+  width: auto;
+  max-width: 500px;
+}
+.mail .messages .media-list .media-body .media-heading {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #828282;
+}
+.mail .messages .media-list .media-body .content {
+  display: block;
+  border-radius: 13px;
+  padding: 14px 24px;
+}
+.mail .messages .media-list .media-body .content a {
+  color: inherit;
+  text-decoration: underline;
+}
+.mail .messages .media-list .media-body .content .time-container {
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  margin-top: 10px;
+}
+.mail .messages .media-list .media-body .content .time {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+.mail .messages .mail-message-form {
+  margin-right: -22px;
+}
+.mail .messages .mail-message-form form {
+  display: flex;
+  align-items: center;
+}
+.mail .messages .mail-message-form form .form-group {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+.mail .messages .mail-message-form form .form-group .help-block {
+  display: none;
+}
+.mail .messages .mail-message-form form .form-control {
+  padding: 20px 22px;
+  border-radius: 6px;
+}
+.mail .messages .mail-message-form form .form-control:not(:focus) {
+  border: none;
+  background-color: #f5f5f5;
+}
+.mail .messages .mail-message-form form .reply-button {
+  font-size: 24px;
+  color: #3cbeef;
 }
 .mail .panel {
   box-shadow: none;
@@ -394,13 +512,19 @@
   margin: 0;
   font-size: 14px;
   line-height: 19px;
-  color: #000;
 }
 #dropdown-messages .media-list li .media h4 {
   font-weight: 600;
+  color: #000;
 }
 #dropdown-messages .media-list li .media p {
   font-weight: 400;
+  color: #4b4b4b;
+}
+#dropdown-messages .media-list li .media .time {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
 }
 #dropdown-messages li:last-child {
   margin-bottom: 0;

@@ -13,6 +13,149 @@
     @import "_conversation_header";
   }
 
+  .panel-body {
+    padding: 18px 22px;
+  }
+
+  .media-list {
+
+    padding-top: 18px;
+    margin-bottom: 50px;
+
+    li {
+      padding: 0;
+      border: none;
+    }
+
+    .date-divider {
+      position: sticky;
+      top: 0;
+      margin: 16px 0;
+
+      hr {
+        color: @date-divide-color;
+      }
+      small {
+        display: block;
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        padding: 0 62px;
+        background-color: #fff;
+      }
+    }
+
+    .media {
+      position: relative;
+      overflow: visible;
+    }
+
+    .user-image {
+      margin-top: 21px;
+      margin-right: 18px;
+    }
+
+    .media.me .media-body .content {
+      margin-right: 49px;
+      background-color: @message-bg-color;
+      p {
+        color: @message-text-color;
+      }
+      .time {
+        color: @message-time-text-color;
+      }
+    }
+    .media.other .media-body .content {
+      background-color: @message-bg-color-alt;
+      p {
+        color: @message-text-color-alt;
+      }
+      .time {
+        color: @message-time-text-color-alt;
+      }
+    }
+
+    .media-body {
+      width: auto;
+      max-width: 500px;
+
+      .media-heading {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: @message-user-text-color;
+      }
+
+      .content {
+        display: block;
+        border-radius: 13px;
+        padding: 14px 24px;
+
+        a {
+          color: inherit;
+          text-decoration: underline;
+        }
+
+        .time-container {
+          display: inline-block;
+          text-align: right;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .time {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+
+    }
+
+    .mail-conversation-entry {
+
+
+
+    }
+
+  }
+
+  .mail-message-form {
+    margin-right: -22px;
+  }
+
+  .mail-message-form form {
+    display: flex;
+    align-items: center;
+
+    .form-group {
+      flex-grow: 1;
+      margin-bottom: 0;
+
+      .help-block {
+        display: none;
+      }
+    }
+
+    .form-control {
+      padding: 20px 22px;
+      border-radius: 6px;
+
+      &:not(:focus) {
+        border: none;
+        background-color: @message-reply-placeholder-bg-color;
+      }
+    }
+
+    .reply-button {
+      font-size: 24px;
+      color: @message-reply-btn-color;
+    }
+
+  }
+
 }
 
 /* -------------------------------------------- */
