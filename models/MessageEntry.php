@@ -177,7 +177,7 @@ class MessageEntry extends ActiveRecord
             $mail->setFrom([Yii::$app->settings->get('mailer.systemEmailAddress') => Yii::$app->settings->get('mailer.systemEmailName')]);
             $mail->setTo($user->email);
             $mail->setSubject(Yii::t('MailModule.models_MessageEntry', 'New message in discussion from %displayName%', array('%displayName%' => $senderName)));
-            $mail->send();
+            //$mail->send();
 
             Yii::$app->i18n->autosetLocale();
 

@@ -242,7 +242,7 @@ class Message extends ActiveRecord
         $mail->setFrom([Yii::$app->settings->get('mailer.systemEmailAddress') => Yii::$app->settings->get('mailer.systemEmailName')]);
         $mail->setTo($user->email);
         $mail->setSubject(Yii::t('MailModule.models_Message', 'New message from {senderName}', array("{senderName}" => \yii\helpers\Html::encode($this->originator->displayName))));
-        $mail->send();
+        // $mail->send();
 
         Yii::$app->i18n->autosetLocale();
     }
