@@ -69,6 +69,6 @@ use humhub\widgets\ModalButton;
 
     <?php endif; ?>
 </div>
-<a href="#" class="mail-link" data-action-click="mail.wall.toggleDiscussion">
+<a href="#" class="close-discussion" data-action-click="mail.wall.toggleDiscussion">
     <i class="fa fa-close"></i>
 </a>
