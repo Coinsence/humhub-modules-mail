@@ -4,6 +4,7 @@ namespace humhub\modules\mail\widgets;
 
 use Yii;
 use humhub\components\Widget;
+use yii\db\Expression;
 
 /**
  * Shows a given date & time as automatically updating fuzzy timestamps (e.g. "4 minutes ago" or "about 1 day ago").
@@ -36,6 +37,8 @@ class MessageEntryTime extends Widget
         // Make sure we get an timestamp in server tz
         if (is_numeric($this->timestamp)) {
             $this->timestamp = date('Y-m-d H:i:s', $this->timestamp);
+        } elseif ($this->timestamp instanceof Expression && $this->timestamp->expression === 'NOW()') {
+            $this->timestamp = date('Y-m-d H:i:s');
         }
         $this->timestamp = strtotime($this->timestamp);
 
