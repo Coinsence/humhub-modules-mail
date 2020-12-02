@@ -1,12 +1,16 @@
 <?php
-use humhub\libs\Html;
 
+use humhub\libs\Html;
+use humhub\modules\mail\permissions\StartConversation;
 use yii\helpers\Url;
 use humhub\widgets\Button;
 use humhub\modules\mail\widgets\UsersImages as UsersImages;
 use humhub\widgets\ModalButton;
 
+$canStartConversation = Yii::$app->user->can(StartConversation::class);
+
 /* @var $message \humhub\modules\mail\models\Message */
+
 ?>
 
 <div class="left">
