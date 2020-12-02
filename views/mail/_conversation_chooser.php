@@ -33,6 +33,12 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
     </ul>
 </div>
 
+<?php if($canStartConversation) : ?>
+    <div class="floating-new-message-btn">
+        <?= NewMessageButton::widget(['icon' => 'fa-plus', 'size' => 'xs', 'iconOnly' => true, 'cssClass' => 'new-message-button reversed'])?>
+    </div>
+<?php endif; ?>
+
 <div class="pagination-container">
     <?= LinkPager::widget(['pagination' => $pagination]); ?>
 </div>

@@ -19,9 +19,6 @@
 
   .media-list {
 
-    padding-top: 18px;
-    margin-bottom: 50px;
-
     li {
       padding: 0;
       border: none;
@@ -31,13 +28,13 @@
       display: contents;
 
       hr {
-        margin: 16px 0 -20px;
+        margin: 20px 0 -20px;
         color: @date-divide-color;
       }
       small {
         display: inline-block;
         position: sticky;
-        top: -10px;
+        top: 0;
         left: calc(50% - 200px / 2);
         width: 200px;
         text-align: center;
@@ -115,15 +112,10 @@
 
     }
 
-    .mail-conversation-entry {
-
-
-
-    }
-
   }
 
   .mail-message-form {
+    padding-top: 50px;
     margin-right: -22px;
   }
 
@@ -155,6 +147,27 @@
       color: @message-reply-btn-color;
     }
 
+  }
+
+  @media screen and (max-width: 991px) {
+    display: none;
+    padding: 0;
+
+    .panel-heading {
+      padding-left: 38px;
+    }
+
+    &.opened {
+      display: block;
+      position: absolute;
+      top: -66px;
+      z-index: 1031;
+      width: 100%;
+      height: 100vh;
+    }
+    .panel {
+      margin-bottom: 0;
+    }
   }
 
 }

@@ -17,6 +17,39 @@
     @import (multiple) "_messagePreview";
   }
 
+  .floating-new-message-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 86px;
+    right: 25px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: @button-info-bg-color;
+  }
+
+  @media screen and (max-width: 991px) {
+
+    padding: 0;
+    height: calc(100vh - 64px);
+
+    .panel {
+      height: 100%;
+      margin-bottom: 0;
+    }
+
+    .panel-heading {
+      display: none;
+    }
+
+    .floating-new-message-btn {
+      display: inline-flex;
+    }
+
+  }
+
 }
 
 /* -------------------------------------------- */

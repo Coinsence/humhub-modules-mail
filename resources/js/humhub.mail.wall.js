@@ -279,6 +279,7 @@ humhub.module('mail.wall', function(module, require, $) {
     var loadMessage = function(evt) {
         if($('#mail-conversation-root').length) {
             getRootView().loadMessage(evt);
+            toggleDiscussion(true);
         } else {
             client.pjax.redirect(evt.url);
         }
@@ -296,6 +297,15 @@ humhub.module('mail.wall', function(module, require, $) {
         });
     };
 
+    function toggleDiscussion(open) {
+      console.log(open);
+      if (open !== true){
+        $('#mail-conversation-root').parent().removeClass('opened');
+      } else {
+        $('#mail-conversation-root').parent().removeClass('opened').addClass('opened');
+      }
+    }
+
    module.export({
        init: init,
        ConversationView: ConversationView,
@@ -304,5 +314,6 @@ humhub.module('mail.wall', function(module, require, $) {
        loadMessage: loadMessage,
        submitEditEntry: submitEditEntry,
        deleteEntry: deleteEntry,
+       toggleDiscussion: toggleDiscussion,
    });
 });

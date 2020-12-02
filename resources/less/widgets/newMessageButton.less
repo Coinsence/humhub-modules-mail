@@ -21,6 +21,14 @@
   &:focus:after {
     border-top-color: darken(@button-info-bg-color, 5%);
   }
+
+  &.reversed {
+    background-color: #fff !important;
+    color: @button-info-bg-color !important;
+    &:after {
+      border-top: 8px solid #fff;
+    }
+  }
 }
 
 /* -------------------------------------------- */
