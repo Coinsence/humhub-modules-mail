@@ -166,8 +166,14 @@ humhub.module('mail.wall', function(module, require, $) {
             return;
         }
 
+        var responsiveWidth = 991;
+
         var formHeight = $('.mail-message-form').height();
-        var max_height = (window.innerHeight - this.$.position().top - formHeight - 95) + 'px';
+        var max_height = (window.innerHeight - this.$.position().top - formHeight - 95);
+        if (window.innerWidth <= responsiveWidth) {
+          max_height += 26;
+        }
+        max_height += 'px';
         this.$.find('.conversation-entry-list').css('max-height', max_height);
     };
 

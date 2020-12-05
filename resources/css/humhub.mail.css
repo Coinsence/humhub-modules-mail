@@ -121,7 +121,7 @@
 .mail .chooser .media-list li .media .sep {
   font-weight: 600;
   font-size: 16px;
-  margin: 0 12px;
+  margin: 0 6px;
   color: #b9b9b9;
 }
 .mail .chooser .media-list li .media h4,
@@ -163,6 +163,14 @@
   .mail .chooser .panel {
     height: 100%;
     margin-bottom: 0;
+    overflow: hidden;
+  }
+  .mail .chooser .panel > .media-list {
+    max-height: 100%;
+    overflow: auto;
+  }
+  .mail .chooser .panel > .media-list > li:last-child {
+    margin-bottom: 54px;
   }
   .mail .chooser .panel-heading {
     display: none;
@@ -269,7 +277,7 @@
   margin-right: 18px;
 }
 .mail .messages .media-list .media.me .media-body .content {
-  margin-right: 49px;
+  margin-right: 32px;
   background-color: #3cbeef;
 }
 .mail .messages .media-list .media.me .media-body .content p {
@@ -287,8 +295,12 @@
 .mail .messages .media-list .media.other .media-body .content .time {
   color: #828282;
 }
+.mail .messages .media-list .nav-pills.preferences .dropdown .dropdown-toggle {
+  padding: 2px 6px;
+}
 .mail .messages .media-list .media-body {
   width: auto;
+  padding-left: 0;
 }
 .mail .messages .media-list .media-body .media-heading {
   font-weight: 400;
@@ -325,6 +337,10 @@
   display: flex;
   align-items: center;
 }
+.mail .messages .mail-message-form form .ProseMirror-menubar > .ProseMirror-menu-group > .ProseMirror-menuitem:first-of-type,
+.mail .messages .mail-message-form form .ProseMirror-menubar .helper-group {
+  display: none;
+}
 .mail .messages .mail-message-form form .form-group {
   flex-grow: 1;
   margin-bottom: 0;
@@ -342,6 +358,7 @@
 }
 .mail .messages .mail-message-form form .reply-button {
   font-size: 24px;
+  opacity: 0.5;
   color: #3cbeef;
 }
 @media screen and (max-width: 991px) {
@@ -352,16 +369,35 @@
   .mail .messages .panel-heading {
     padding-left: 38px;
   }
+  .mail .messages .panel-body {
+    padding: 0 22px;
+  }
   .mail .messages.opened {
     display: block;
-    position: absolute;
-    top: -66px;
+    position: fixed;
+    top: 0;
     z-index: 1031;
     width: 100%;
     height: 100vh;
   }
   .mail .messages .panel {
     margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+  }
+  .mail .messages .mail-message-form {
+    padding-top: 0;
+    margin-left: -22px;
+    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+  }
+  .mail .messages .mail-message-form form .ProseMirror-menubar {
+    border-bottom: 2px solid #d7d7d7;
+  }
+  .mail .messages .mail-message-form form .form-control {
+    background-color: #fff !important;
+  }
+  .mail .messages .mail-message-form form .form-control:focus {
+    border: none;
   }
 }
 .mail .panel {
@@ -615,7 +651,7 @@
 #dropdown-mail-messages .media-list li .media .sep {
   font-weight: 600;
   font-size: 16px;
-  margin: 0 12px;
+  margin: 0 6px;
   color: #b9b9b9;
 }
 #dropdown-mail-messages .media-list li .media h4,

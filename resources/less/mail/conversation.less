@@ -56,7 +56,7 @@
     }
 
     .media.me .media-body .content {
-      margin-right: 49px;
+      margin-right: 32px;
       background-color: @message-bg-color;
       p {
         color: @message-text-color;
@@ -75,8 +75,13 @@
       }
     }
 
+    .nav-pills.preferences .dropdown .dropdown-toggle {
+      padding: 2px 6px;
+    }
+
     .media-body {
       width: auto;
+      padding-left: 0;
 
       .media-heading {
         font-weight: 400;
@@ -123,6 +128,13 @@
     display: flex;
     align-items: center;
 
+    .ProseMirror-menubar {
+      > .ProseMirror-menu-group > .ProseMirror-menuitem:first-of-type,
+      .helper-group {
+        display: none;
+      }
+    }
+
     .form-group {
       flex-grow: 1;
       margin-bottom: 0;
@@ -144,6 +156,7 @@
 
     .reply-button {
       font-size: 24px;
+      opacity: 0.5;
       color: @message-reply-btn-color;
     }
 
@@ -157,17 +170,43 @@
       padding-left: 38px;
     }
 
+    .panel-body {
+      padding: 0 22px;
+    }
+
     &.opened {
       display: block;
-      position: absolute;
-      top: -66px;
+      position: fixed;
+      top: 0;
       z-index: 1031;
       width: 100%;
       height: 100vh;
     }
     .panel {
       margin-bottom: 0;
+      border: none;
+      border-radius: 0;
     }
+
+    .mail-message-form {
+      padding-top: 0;
+      margin-left: -22px;
+      box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .mail-message-form form {
+      .ProseMirror-menubar {
+        border-bottom: 2px solid #d7d7d7;
+      }
+
+      .form-control {
+        background-color: #fff !important;
+        &:focus {
+          border: none;
+        }
+      }
+    }
+
   }
 
 }

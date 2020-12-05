@@ -38,6 +38,17 @@
     .panel {
       height: 100%;
       margin-bottom: 0;
+      overflow: hidden;
+
+      > .media-list {
+        max-height: 100%;
+        overflow: auto;
+      }
+
+      > .media-list > li:last-child {
+        margin-bottom: 54px;
+      }
+
     }
 
     .panel-heading {
