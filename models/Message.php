@@ -271,4 +271,16 @@ class Message extends ActiveRecord
         return $userMessage->save();
 
     }
+
+    /**
+     * Get list of recipients users
+     *
+     * @return array|User[]
+     */
+    public function getRecepients()
+    {
+        return array_values(array_filter($this->users, function ($user) {
+            return $user->id !== Yii::$app->user->id;
+        }));
+    }
 }

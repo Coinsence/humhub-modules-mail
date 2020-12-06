@@ -49,7 +49,7 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
     </ul>
     <?= UsersImages::widget(['type' => 'header', 'users' => $message->users, 'messageId' => $message->id]) ?>
     <?php if (count($message->users) == 2) : ?>
-        <span class="conversation-title"><?= Html::encode(Helpers::truncateText($message->users[1]->getDisplayName(), 25)); ?></span>
+        <span class="conversation-title"><?= Html::encode(Helpers::truncateText($message->getRecepients()[0]->getDisplayName(), 25)); ?></span>
     <?php else : ?>
         <span class="conversation-title"><?= Html::encode(Helpers::truncateText($message->title, 25)); ?></span>
     <?php endif; ?>
