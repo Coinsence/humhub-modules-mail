@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use humhub\widgets\Button;
 use humhub\modules\mail\widgets\UsersImages as UsersImages;
 use humhub\widgets\ModalButton;
+use humhub\libs\Helpers;
 
 $canStartConversation = Yii::$app->user->can(StartConversation::class);
 
@@ -48,9 +49,9 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
     </ul>
     <?= UsersImages::widget(['type' => 'header', 'users' => $message->users, 'messageId' => $message->id]) ?>
     <?php if (count($message->users) == 2) : ?>
-        <span class="conversation-title"><?= Html::encode($message->users[1]->getDisplayName()); ?></span>
+        <span class="conversation-title"><?= Html::encode(Helpers::truncateText($message->users[1]->getDisplayName(), 25)); ?></span>
     <?php else : ?>
-        <span class="conversation-title"><?= Html::encode($message->title); ?></span>
+        <span class="conversation-title"><?= Html::encode(Helpers::truncateText($message->title, 25)); ?></span>
     <?php endif; ?>
 </div>
 
