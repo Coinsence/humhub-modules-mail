@@ -110,9 +110,11 @@
 .mail .chooser .media-list li .media .media-heading {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.mail .chooser .media-list li .media .media-heading .text {
-  flex-grow: 1;
+.mail .chooser .media-list li .media .media-heading .time {
+  margin-left: 8px;
+  flex-shrink: 0;
 }
 .mail .chooser .media-list li .media .media-left,
 .mail .chooser .media-list li .media .media > .pull-left {
@@ -244,9 +246,6 @@
 }
 .mail .messages .panel-body {
   padding: 0 22px 18px;
-}
-.mail .messages .media-list {
-  height: 100vh;
 }
 .mail .messages .media-list li {
   padding: 0;
@@ -643,9 +642,11 @@
 #dropdown-mail-messages .media-list li .media .media-heading {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-#dropdown-mail-messages .media-list li .media .media-heading .text {
-  flex-grow: 1;
+#dropdown-mail-messages .media-list li .media .media-heading .time {
+  margin-left: 8px;
+  flex-shrink: 0;
 }
 #dropdown-mail-messages .media-list li .media .media-left,
 #dropdown-mail-messages .media-list li .media .media > .pull-left {
