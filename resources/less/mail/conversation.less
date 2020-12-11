@@ -28,11 +28,15 @@
       border: none;
     }
 
+    .mail-conversation-entry:last-of-type {
+      margin-bottom: 15px;
+    }
+
     .date-divider {
       display: contents;
 
       hr {
-        margin: 20px 0 -20px;
+        margin: 35px 0 -20px;
         color: @date-divide-color;
       }
       small {
@@ -50,12 +54,9 @@
       }
     }
 
-    .media {
+    .media > .media {
       position: relative;
       overflow: visible;
-      &:last-child {
-        margin-bottom: 15px;
-      }
     }
 
     .user-image {
