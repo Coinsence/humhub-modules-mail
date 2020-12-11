@@ -161,6 +161,7 @@
   .mail .chooser {
     padding: 0;
     height: calc(100vh - 64px);
+    overflow: hidden;
   }
   .mail .chooser .panel {
     height: 100%;
