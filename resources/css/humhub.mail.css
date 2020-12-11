@@ -251,9 +251,6 @@
 .mail .messages .panel-body {
   padding: 0 22px 18px;
 }
-.mail .messages .conversation-entry-list {
-  max-height: 408px;
-}
 .mail .messages .media-list li {
   padding: 0;
   border: none;
@@ -383,14 +380,7 @@
     padding-left: 38px;
   }
   .mail .messages .panel-body {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 68px - 1px);
     padding: 0 22px;
-  }
-  .mail .messages .conversation-entry-list {
-    max-height: none;
-    flex-grow: 1;
   }
   .mail .messages.opened {
     display: block;
