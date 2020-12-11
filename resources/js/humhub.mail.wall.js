@@ -13,10 +13,6 @@ humhub.module('mail.wall', function(module, require, $) {
 
     ConversationView.prototype.init = function() {
         additions.observe(this.$);
-        var that = this;
-        window.onresize = function (evt) {
-            that.updateSize();
-        };
         this.reload();
     };
 
@@ -157,26 +153,6 @@ humhub.module('mail.wall', function(module, require, $) {
     ConversationView.prototype.scrollToBottom = function() {
         var $list = this.getListNode();
         $list.animate({scrollTop : $list[0].scrollHeight});
-        this.updateSize();
-
-    };
-
-    ConversationView.prototype.updateSize = function() {
-        if(!$('.conversation-entry-list').length) {
-            return;
-        }
-
-        var responsiveWidth = 991;
-
-        var formHeight = $('.mail-message-form').height();
-        var height = (window.innerHeight - this.$.position().top - formHeight - 95);
-        if (window.innerWidth <= responsiveWidth) {
-          this.$.find('.conversation-entry-list').css('max-height', null);
-          this.$.find('.conversation-entry-list').css('height', height + 26 + 'px');
-        } else {
-          this.$.find('.conversation-entry-list').css('height', null);
-          this.$.find('.conversation-entry-list').css('max-height', height);
-        }
     };
 
     ConversationView.prototype.getListNode = function() {
@@ -309,8 +285,10 @@ humhub.module('mail.wall', function(module, require, $) {
       console.log(open);
       if (open !== true){
         $('#mail-conversation-root').parent().removeClass('opened');
+        $('#mail-conversation-overview').parent().removeClass('closed');
       } else {
         $('#mail-conversation-root').parent().removeClass('opened').addClass('opened');
+        $('#mail-conversation-overview').parent().removeClass('closed').addClass('closed');
       }
     }
 
