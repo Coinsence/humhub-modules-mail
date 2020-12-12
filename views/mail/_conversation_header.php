@@ -27,6 +27,10 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
                         ->load(['/mail/mail/add-user', 'id' => $message->id])->visible($canStartConversation) ?>
                 </li>
                 <li>
+                    <?= ModalButton::asLink('<span>' . Yii::t('MailModule.views_mail_participants', 'Show participants') . '</span>')
+                        ->load(['/mail/mail/participants', 'id' => $message->id])->visible($canStartConversation) ?>
+                </li>
+                <li>
                     <?php if (count($message->users)) : ?>
                         <?php if (count($message->users) != 1) : ?>
                             <?= Button::asLink('<span>' . Yii::t('MailModule.views_mail_show', 'Leave conversation') . '</span>')
