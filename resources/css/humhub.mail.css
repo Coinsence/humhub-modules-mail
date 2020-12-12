@@ -509,6 +509,10 @@
   border: 2px solid #fff;
   border-radius: 50%;
 }
+.header_users-images .users-images .participant-modal-link {
+  display: contents;
+}
+.header_users-images .users-images .participant-modal-link > *:not(:first-child),
 .header_users-images .users-images > *:not(:first-child) {
   margin-right: -10px;
 }

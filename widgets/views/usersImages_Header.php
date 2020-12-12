@@ -16,11 +16,10 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
 
 <div class="header_users-images">
     <div class="users-images">
-        <?php if ($excessiveUsersNum > 0) : ?>
-            <!-- TODO: tooltip with all the excessive users names-->
-            <button class="btn-xs btn btn-info"><?= '+' . $excessiveUsersNum ?></button>
-        <?php endif; ?>
-        <a href="#" data-action-click="ui.modal.load" data-action-click-url="/mail/mail/participants?id=<?= $messageId ?>">
+        <a class="participant-modal-link" href="#" data-action-click="ui.modal.load" data-action-click-url="/mail/mail/participants?id=<?= $messageId ?>">
+            <?php if ($excessiveUsersNum > 0) : ?>
+                <button class="btn-xs btn btn-info"><?= '+' . $excessiveUsersNum ?></button>
+            <?php endif; ?>
             <?php foreach ($users as $user) : ?>
                 <?= Image::widget(['user' => $user, 'width' => '41', 'showTooltip' => true, 'link' => false])?>
             <?php endforeach; ?>
