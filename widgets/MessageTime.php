@@ -35,13 +35,16 @@ class MessageTime extends Widget
      */
     public function run()
     {
-        $elapsed = time() - $this->timestamp;
+        $now = time();
+        $now = $now - ($now % 86400);
+        $elapsed = $now - $this->timestamp;
+
         $elapsedDays = $elapsed/(60*60*24);
-        $elapsedDays = $elapsedDays > 0 ? floor($elapsedDays) : ceil($elapsedDays);
+        $elapsedDays = ceil($elapsedDays);
 
         if ($elapsedDays == 0) { // today
             return $this->renderTimeOnly();
-        } elseif ($elapsedDays <= 7) { // in the past week
+        } elseif ($elapsedDays < 7) { // in the past week
             return $this->renderDayNameOnly();
         } else { // before the past week
             return $this->renderDate();
