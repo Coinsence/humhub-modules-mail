@@ -176,13 +176,19 @@
     overflow: auto;
   }
   .mail .chooser .panel > .media-list > li:last-child {
-    margin-bottom: 54px;
+    margin-bottom: 144px;
   }
   .mail .chooser .panel-heading {
     display: none;
   }
   .mail .chooser .floating-new-message-btn {
     display: inline-flex;
+  }
+  .mail .chooser .pagination-container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
   }
 }
 .mail .messages .panel-heading {
