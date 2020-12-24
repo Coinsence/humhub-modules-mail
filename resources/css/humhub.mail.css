@@ -109,7 +109,7 @@
 }
 .mail .chooser .media-list li .media .media-heading {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 .mail .chooser .media-list li .media .media-heading .time {
@@ -118,7 +118,7 @@
 }
 .mail .chooser .media-list li .media .media-left,
 .mail .chooser .media-list li .media .media > .pull-left {
-  margin-right: 28px;
+  margin-right: 14px;
 }
 .mail .chooser .media-list li .media .sep {
   font-weight: 600;
@@ -129,8 +129,8 @@
 .mail .chooser .media-list li .media h4,
 .mail .chooser .media-list li .media p {
   margin: 0;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 17px;
 }
 .mail .chooser .media-list li .media h4 {
   font-weight: 600;
@@ -528,16 +528,16 @@
   }
 }
 .panel_users-images {
-  --img-num-1-width: 67px;
-  --img-num-2-width: 46px;
-  --img-num-3-width: 42px;
-  --img-num-4-width: 40px;
+  --img-num-1-width: 59px;
+  --img-num-2-width: 42px;
+  --img-num-3-width: 36px;
+  --img-num-4-width: 34px;
   position: relative;
 }
 .panel_users-images .users-images {
   display: inline-grid;
-  grid-template-columns: 34px 34px;
-  grid-template-rows: 34px 34px;
+  grid-template-columns: 30px 30px;
+  grid-template-rows: 30px 30px;
 }
 .panel_users-images .users-images.img-num-1 .btn {
   width: var(--img-num-1-width);
@@ -673,7 +673,7 @@
 }
 #dropdown-mail-messages .media-list li .media .media-heading {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 #dropdown-mail-messages .media-list li .media .media-heading .time {
@@ -682,7 +682,7 @@
 }
 #dropdown-mail-messages .media-list li .media .media-left,
 #dropdown-mail-messages .media-list li .media .media > .pull-left {
-  margin-right: 28px;
+  margin-right: 14px;
 }
 #dropdown-mail-messages .media-list li .media .sep {
   font-weight: 600;
@@ -693,8 +693,8 @@
 #dropdown-mail-messages .media-list li .media h4,
 #dropdown-mail-messages .media-list li .media p {
   margin: 0;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 17px;
 }
 #dropdown-mail-messages .media-list li .media h4 {
   font-weight: 600;

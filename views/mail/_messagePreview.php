@@ -30,9 +30,9 @@ $message = $userMessage->message;
                 <div class="media-body text-break">
                     <div class="media-heading">
                         <?php if (count($message->users) == 2) : ?>
-                        <h4 class="text"><?= Html::encode(Helpers::truncateText($message->getRecepients()[0]->getDisplayName(), 10)); ?><span class="sep">|</span><?= Html::encode(Helpers::truncateText($message->title, 10)); ?></h4>
+                        <h4 class="text"><?= Html::encode(Helpers::truncateText($message->getRecepients()[0]->getDisplayName(), 20)); ?><br><?= Html::encode(Helpers::truncateText($message->title, 20)); ?></h4>
                         <?php else : ?>
-                        <h4 class="text"><?= Html::encode(Helpers::truncateText($message->title, 25)); ?></h4>
+                        <h4 class="text"><?= Html::encode(Helpers::truncateText($message->title, 20)); ?></h4>
                         <?php endif; ?>
                         <?= MessageTime::widget(['timestamp' => $message->updated_at]); ?>
                     </div>

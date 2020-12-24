@@ -14,13 +14,13 @@ class UsersImages extends Widget
 
     const MAX_VISIBLE_USERS_IN_HEADER = 3;
     const MAX_VISIBLE_USERS_IN_PANEL = 4;
-    const PANEL_ONE_IMAGE_WIDTH = 67;
+    const PANEL_ONE_IMAGE_WIDTH = 59;
     const PANEL_ONE_IMAGE_CSS_CLASS = 'img-num-1';
-    const PANEL_TWO_IMAGES_WIDTH = 46;
+    const PANEL_TWO_IMAGES_WIDTH = 42;
     const PANEL_TWO_IMAGES_CSS_CLASS = 'img-num-2';
-    const PANEL_THREE_IMAGES_WIDTH = 42;
+    const PANEL_THREE_IMAGES_WIDTH = 36;
     const PANEL_THREE_IMAGES_CSS_CLASS = 'img-num-3';
-    const PANEL_MORE_IMAGES_WIDTH = 40;
+    const PANEL_MORE_IMAGES_WIDTH = 34;
     const PANEL_MORE_IMAGES_CSS_CLASS = 'img-num-4-or-more';
 
     /**
