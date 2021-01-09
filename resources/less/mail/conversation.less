@@ -1,0 +1,219 @@
+
+/* -------------------------------------------- */
+/* mail conversation styling */
+/* -------------------------------------------- */
+
+.messages {
+
+  .panel-heading {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 13.5px 22px;
+    @import "_conversation_header";
+  }
+
+  .panel-body {
+    padding: 0 22px 18px;
+  }
+
+  .media-list {
+
+    li {
+      padding: 0;
+      border: none;
+    }
+
+    .mail-conversation-entry:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    .date-divider {
+      display: contents;
+
+      hr {
+        margin: 35px 0 -20px;
+        color: @date-divide-color;
+      }
+      small {
+        display: inline-block;
+        position: sticky;
+        top: 0;
+        left: calc(50% - 200px / 2);
+        width: 200px;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 24px;
+        border: 1px solid @date-divide-color;
+        background-color: #fff;
+        z-index: 1;
+      }
+    }
+
+    .media {
+      position: relative;
+      overflow: visible;
+    }
+
+    .user-image {
+      margin-top: 21px;
+      margin-right: 18px;
+    }
+
+    .media.me .media-body .content {
+      margin-right: 32px;
+      background-color: @message-bg-color;
+      p {
+        color: @message-text-color;
+      }
+      .time {
+        color: @message-time-text-color;
+      }
+    }
+    .media.other .media-body .content {
+      background-color: @message-bg-color-alt;
+      p {
+        color: @message-text-color-alt;
+      }
+      .time {
+        color: @message-time-text-color-alt;
+      }
+    }
+
+    .nav-pills.preferences .dropdown .dropdown-toggle {
+      padding: 2px 6px;
+    }
+
+    .media-body {
+      width: auto;
+      padding-left: 0;
+
+      .media-heading {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: @message-user-text-color;
+      }
+
+      .content {
+        display: block;
+        max-width: 500px;
+        padding: 14px 24px;
+        border-radius: 13px;
+
+        a {
+          color: inherit;
+          text-decoration: underline;
+        }
+
+        .time-container {
+          display: inline-block;
+          text-align: right;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .time {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+
+    }
+
+  }
+
+  .mail-message-form {
+    padding-top: 12px;
+    margin-right: -22px;
+  }
+
+  .mail-message-form form {
+    display: flex;
+    align-items: center;
+
+    .ProseMirror-menubar {
+      > .ProseMirror-menu-group > .ProseMirror-menuitem:first-of-type,
+      .helper-group {
+        display: none;
+      }
+    }
+
+    .form-group {
+      flex-grow: 1;
+      margin-bottom: 0;
+
+      .help-block {
+        display: none;
+      }
+    }
+
+    .form-control {
+      padding: 20px 22px;
+      border-radius: 6px;
+
+      &:not(:focus) {
+        border: none;
+        background-color: @message-reply-placeholder-bg-color;
+      }
+    }
+
+    .reply-button {
+      font-size: 24px;
+      opacity: 0.5;
+      color: @message-reply-btn-color;
+    }
+
+  }
+
+  @media screen and (max-width: 991px) {
+    display: none;
+    padding: 0;
+
+    .panel-heading {
+      padding-left: 38px;
+    }
+
+    .panel-body {
+      padding: 0 22px;
+    }
+
+    &.opened {
+      display: block;
+      position: fixed;
+      top: 0;
+      z-index: 1031;
+      width: 100%;
+      height: 100vh;
+    }
+    .panel {
+      margin-bottom: 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .mail-message-form {
+      padding-top: 0;
+      margin-left: -22px;
+      box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .mail-message-form form {
+      .ProseMirror-menubar {
+        border-bottom: 2px solid #d7d7d7;
+      }
+
+      .form-control {
+        background-color: #fff !important;
+        &:focus {
+          border: none;
+        }
+      }
+    }
+
+  }
+
+}
+
+/* -------------------------------------------- */

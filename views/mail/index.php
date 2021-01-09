@@ -8,18 +8,22 @@ use humhub\modules\mail\widgets\wall\ConversationView;
 
 ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <?= $this->render('_conversation_chooser', [
-                'userMessages' => $userMessages,
-                'pagination' => $pagination,
-                'activeMessageId' => $messageId
-            ]) ?>
-        </div>
+<div class="mail">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-4 chooser">
+                    <?= $this->render('_conversation_chooser', [
+                        'userMessages' => $userMessages,
+                        'pagination' => $pagination,
+                        'activeMessageId' => $messageId
+                    ]) ?>
+                </div>
 
-        <div class="col-md-8 messages">
-            <?= ConversationView::widget(['messageId' => $messageId]) ?>
+                <div class="col-md-8 messages">
+                    <?= ConversationView::widget(['messageId' => $messageId]) ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>

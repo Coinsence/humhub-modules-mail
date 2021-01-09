@@ -399,6 +399,24 @@ class MailController extends Controller
     }
 
     /**
+     * Show a modal with the conversation participants
+     *
+     * @param int $id
+     */
+    public function actionParticipants($id)
+    {
+        $message = $this->getMessage($id);
+
+        if (!$message) {
+            throw new HttpException(404, 'Could not find message!');
+        }
+
+        return $this->renderAjax('participants', [
+            'message' => $message
+        ]);
+    }
+
+    /**
      * Returns the Message Model by given Id
      * Also an access check will be performed.
      *

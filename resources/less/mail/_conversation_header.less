@@ -1,0 +1,74 @@
+
+/* -------------------------------------------- */
+/* mail conversation header styling */
+/* -------------------------------------------- */
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 14px;
+  left: 8px;
+
+  .dropdown {
+    .dropdown-toggle {
+      font-size: 20px;
+      color: #3cbeef !important;
+      background-color: transparent !important;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: #fff;
+    li {
+      border-left: 0;
+    }
+    li:last-child a {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+}
+
+.conversation-title {
+  margin-left: 22px;
+}
+
+.conversation-actions {
+  a {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: @panel-header-action-color;
+    padding: 0;
+
+    span {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      margin-right: 10px;
+    }
+  }
+
+}
+
+.close-discussion {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .nav {
+    display: block;
+  }
+  .conversation-actions {
+    display: none;
+  }
+  .close-discussion {
+    display: block;
+  }
+}
+
+
+/* -------------------------------------------- */

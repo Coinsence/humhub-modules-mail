@@ -3,9 +3,8 @@
 use humhub\libs\Html;
 use humhub\modules\mail\permissions\StartConversation;
 use yii\bootstrap\ActiveForm;
-use humhub\widgets\ModalButton;
-use yii\helpers\Url;
-use humhub\modules\content\widgets\richtext\ProsemirrorRichTextEditor;
+use humhub\modules\mail\widgets\MessageEntryTime;
+use humhub\modules\mail\widgets\MailRichtextEditor;
 use humhub\modules\mail\widgets\wall\ConversationEntry;
 use humhub\widgets\Button;
 
@@ -27,14 +26,22 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
 
     <?php  else :?>
 
-        <div id="mail-conversation-header" class="panel-heading" style="background-color:<?= $this->theme->variable('background-color-secondary')?>">
-            <strong> <?= $this->render('_conversation_header', ['message' => $message]) ?></strong>
+        <div id="mail-conversation-header" class="panel-heading">
+            <?= $this->render('_conversation_header', ['message' => $message]) ?>
         </div>
+
+        <hr>
 
         <div class="panel-body">
 
             <div class="media-list conversation-entry-list">
+                <?php $day = '' ?>
                 <?php foreach ($message->entries as $entry) : ?>
+                    <?php $newDay = MessageEntryTime::widget(['timestamp' => $entry->created_at, 'type' => 'divider', 'raw' => true]) ?>
+                    <?php if ($newDay !== $day) : ?>
+                        <?php $day = $newDay; ?>
+                        <?= $this->render('_date_divider', ['day' => $day]) ?>
+                    <?php endif; ?>
                     <?= ConversationEntry::widget(['entry' => $entry])?>
                 <?php endforeach; ?>
             </div>
@@ -44,20 +51,9 @@ $canStartConversation = Yii::$app->user->can(StartConversation::class);
                 <?php $form = ActiveForm::begin(['enableClientValidation' => false]); ?>
 
                     <?= $form->field($replyForm, 'message')->widget(
-                        ProsemirrorRichTextEditor::class, [
-                        'menuClass' => 'plainMenu',
-                        'placeholder' => Yii::t('MailModule.base', 'Write a message...'),
-                        'pluginOptions' => ['maxHeight' => '300px'],
-                    ])->label(false); ?>
+                        MailRichtextEditor::class)->label(false); ?>
 
-                    <?= Button::primary(Yii::t('MailModule.views_mail_show', 'Send'))->submit()->action('reply', $replyForm->getUrl()) ?>
-
-                    <div class="pull-right">
-
-                        <!-- Button to trigger modal to add user to conversation -->
-                        <?= ModalButton::info(Yii::t('MailModule.views_mail_show', 'Add user'))->icon('fa-plus')
-                            ->load(['/mail/mail/add-user', 'id' => $message->id])->visible($canStartConversation) ?>
-                    </div>
+                    <?= Button::asLink()->cssClass('reply-button')->submit()->action('reply', $replyForm->getUrl())->right()->icon('fa-paper-plane')->lg() ?>
 
                 <?php ActiveForm::end(); ?>
             </div>

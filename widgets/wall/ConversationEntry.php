@@ -30,7 +30,8 @@ class ConversationEntry extends JsWidget
     {
         return $this->render('conversationEntry', [
             'entry' => $this->entry,
-            'options' => $this->getOptions()
+            'options' => $this->getOptions(),
+            'who' => Yii::$app->user->id === $this->entry->user_id ? 'me' : 'other'
         ]);
     }
 

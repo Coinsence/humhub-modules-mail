@@ -1,58 +1,737 @@
+/* -------------------------------------------- */
+/* Variables */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Reset global styles */
+/* -------------------------------------------- */
+/*
 .media-list li.new {
-   background-color: #e9f9ff; 
+  background-color: #e9f9ff;
 }
 
 #create-message-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
 }
 
 .conversation-entry-list {
-    max-height:600px;
-    overflow:auto;
+  max-height:600px;
+  overflow:auto;
 }
 
 .conversation-entry-list .media {
-    padding-right:5px;
+  padding-right:5px;
 }
 
 .mail-conversation-entry {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .mail-conversation-entry img {
-    max-width:100%;
+  max-width:100%;
 }
 
 .placeholder {
-    color: #77777A;
+  color: #77777A;
 }
 
 #dropdown-messages .dropdown-header {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 @media (max-width: 767px) {
 
-    #dropdown-messages {
-        width: 300px !important;
-    }
+  #dropdown-messages {
+    width: 300px !important;
+  }
 
-    .arrow {
-        margin-left: -101px !important;
-    }
+  .arrow {
+    margin-left: -101px !important;
+  }
 }
 
 #createmessage-message .ProseMirror, #mail-conversation-root .ProseMirror, .mail-edit-message .ProseMirror {
-    min-height: 100px !important;
+  min-height: 100px !important;
 }
 
 #createmessage-message .ProseMirror-menubar, #mail-conversation-root .ProseMirror-menubar, .mail-edit-message .ProseMirror-menubar {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 #mail-conversation-root hr {
-    border-top: 1px dashed #eee;
+  border-top: 1px dashed #eee;
 }
+*/
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* mail styling */
+/* -------------------------------------------- */
+.mail {
+  /* -------------------------------------------- */
+  /* mail conversation chooser styling */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+  /* mail conversation styling */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+}
+.mail .chooser .panel-heading {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 21px 22px;
+  color: #1c1c1c;
+}
+.mail .chooser .media-list {
+  /* -------------------------------------------- */
+  /* message preview styling */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+}
+.mail .chooser .media-list li {
+  padding: 15px 22px;
+  border-left: none;
+  --li-bg-color: #fff;
+}
+.mail .chooser .media-list li:hover,
+.mail .chooser .media-list li.selected {
+  --li-bg-color: #e2f5fd;
+  background-color: var(--li-bg-color);
+  border-left: none;
+}
+.mail .chooser .media-list li .media {
+  display: flex;
+  align-items: center;
+}
+.mail .chooser .media-list li .media .media-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.mail .chooser .media-list li .media .media-heading .time {
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+.mail .chooser .media-list li .media .media-left,
+.mail .chooser .media-list li .media .media > .pull-left {
+  margin-right: 14px;
+}
+.mail .chooser .media-list li .media .sep {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 6px;
+  color: #b9b9b9;
+}
+.mail .chooser .media-list li .media h4,
+.mail .chooser .media-list li .media p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 17px;
+}
+.mail .chooser .media-list li .media h4 {
+  font-weight: 600;
+  color: #000;
+}
+.mail .chooser .media-list li .media p {
+  font-weight: 400;
+  color: #4b4b4b;
+}
+.mail .chooser .media-list li .media .time {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+.mail .chooser .floating-new-message-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 86px;
+  right: 25px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #456CA8;
+}
+@media screen and (max-width: 991px) {
+  .mail .chooser {
+    padding: 0;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+  }
+  .mail .chooser.closed #inbox {
+    overflow: hidden;
+  }
+  .mail .chooser .panel {
+    height: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+  .mail .chooser .panel > .media-list {
+    max-height: 100%;
+    overflow: auto;
+  }
+  .mail .chooser .panel > .media-list > li:last-child {
+    margin-bottom: 144px;
+  }
+  .mail .chooser .panel-heading {
+    display: none;
+  }
+  .mail .chooser .floating-new-message-btn {
+    display: inline-flex;
+  }
+  .mail .chooser .pagination-container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+  }
+}
+.mail .messages .panel-heading {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 13.5px 22px;
+  /* -------------------------------------------- */
+  /* mail conversation header styling */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+}
+.mail .messages .panel-heading .nav {
+  display: none;
+  position: absolute;
+  top: 14px;
+  left: 8px;
+}
+.mail .messages .panel-heading .nav .dropdown .dropdown-toggle {
+  font-size: 20px;
+  color: #3cbeef !important;
+  background-color: transparent !important;
+}
+.mail .messages .panel-heading .nav .dropdown-menu {
+  background-color: #fff;
+}
+.mail .messages .panel-heading .nav .dropdown-menu li {
+  border-left: 0;
+}
+.mail .messages .panel-heading .nav .dropdown-menu li:last-child a {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+.mail .messages .panel-heading .conversation-title {
+  margin-left: 22px;
+}
+.mail .messages .panel-heading .conversation-actions a {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  color: #737373;
+  padding: 0;
+}
+.mail .messages .panel-heading .conversation-actions a span {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  margin-right: 10px;
+}
+.mail .messages .panel-heading .close-discussion {
+  display: none;
+}
+@media screen and (max-width: 991px) {
+  .mail .messages .panel-heading .nav {
+    display: block;
+  }
+  .mail .messages .panel-heading .conversation-actions {
+    display: none;
+  }
+  .mail .messages .panel-heading .close-discussion {
+    display: block;
+  }
+}
+.mail .messages .panel-body {
+  padding: 0 22px 18px;
+}
+.mail .messages .media-list li {
+  padding: 0;
+  border: none;
+}
+.mail .messages .media-list .mail-conversation-entry:last-of-type {
+  margin-bottom: 40px;
+}
+.mail .messages .media-list .date-divider {
+  display: contents;
+}
+.mail .messages .media-list .date-divider hr {
+  margin: 35px 0 -20px;
+  color: #d4d4d4;
+}
+.mail .messages .media-list .date-divider small {
+  display: inline-block;
+  position: sticky;
+  top: 0;
+  left: calc(50% - 200px / 2);
+  width: 200px;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 24px;
+  border: 1px solid #d4d4d4;
+  background-color: #fff;
+  z-index: 1;
+}
+.mail .messages .media-list .media {
+  position: relative;
+  overflow: visible;
+}
+.mail .messages .media-list .user-image {
+  margin-top: 21px;
+  margin-right: 18px;
+}
+.mail .messages .media-list .media.me .media-body .content {
+  margin-right: 32px;
+  background-color: #456CA8;
+}
+.mail .messages .media-list .media.me .media-body .content p {
+  color: #fff;
+}
+.mail .messages .media-list .media.me .media-body .content .time {
+  color: #9edff7;
+}
+.mail .messages .media-list .media.other .media-body .content {
+  background-color: #f2f2f2;
+}
+.mail .messages .media-list .media.other .media-body .content p {
+  color: #4b4b4b;
+}
+.mail .messages .media-list .media.other .media-body .content .time {
+  color: #828282;
+}
+.mail .messages .media-list .nav-pills.preferences .dropdown .dropdown-toggle {
+  padding: 2px 6px;
+}
+.mail .messages .media-list .media-body {
+  width: auto;
+  padding-left: 0;
+}
+.mail .messages .media-list .media-body .media-heading {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #828282;
+}
+.mail .messages .media-list .media-body .content {
+  display: block;
+  max-width: 500px;
+  padding: 14px 24px;
+  border-radius: 13px;
+}
+.mail .messages .media-list .media-body .content a {
+  color: inherit;
+  text-decoration: underline;
+}
+.mail .messages .media-list .media-body .content .time-container {
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  margin-top: 10px;
+}
+.mail .messages .media-list .media-body .content .time {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+.mail .messages .mail-message-form {
+  padding-top: 12px;
+  margin-right: -22px;
+}
+.mail .messages .mail-message-form form {
+  display: flex;
+  align-items: center;
+}
+.mail .messages .mail-message-form form .ProseMirror-menubar > .ProseMirror-menu-group > .ProseMirror-menuitem:first-of-type,
+.mail .messages .mail-message-form form .ProseMirror-menubar .helper-group {
+  display: none;
+}
+.mail .messages .mail-message-form form .form-group {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+.mail .messages .mail-message-form form .form-group .help-block {
+  display: none;
+}
+.mail .messages .mail-message-form form .form-control {
+  padding: 20px 22px;
+  border-radius: 6px;
+}
+.mail .messages .mail-message-form form .form-control:not(:focus) {
+  border: none;
+  background-color: #f5f5f5;
+}
+.mail .messages .mail-message-form form .reply-button {
+  font-size: 24px;
+  opacity: 0.5;
+  color: #456CA8;
+}
+@media screen and (max-width: 991px) {
+  .mail .messages {
+    display: none;
+    padding: 0;
+  }
+  .mail .messages .panel-heading {
+    padding-left: 38px;
+  }
+  .mail .messages .panel-body {
+    padding: 0 22px;
+  }
+  .mail .messages.opened {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 1031;
+    width: 100%;
+    height: 100vh;
+  }
+  .mail .messages .panel {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+  }
+  .mail .messages .mail-message-form {
+    padding-top: 0;
+    margin-left: -22px;
+    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+  }
+  .mail .messages .mail-message-form form .ProseMirror-menubar {
+    border-bottom: 2px solid #d7d7d7;
+  }
+  .mail .messages .mail-message-form form .form-control {
+    background-color: #fff !important;
+  }
+  .mail .messages .mail-message-form form .form-control:focus {
+    border: none;
+  }
+}
+.mail .panel {
+  box-shadow: none;
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+}
+.mail .panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.mail hr {
+  margin: 0;
+  border-top-color: #d4d4d4;
+}
+@media screen and (max-width: 991px) {
+  .mail {
+    position: absolute;
+    left: 0;
+    top: 64px;
+    width: 100%;
+  }
+  .mail .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .mail .row {
+    margin: 0;
+  }
+}
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* participants modal styling */
+/* -------------------------------------------- */
+#modal-message-participants .modal-body {
+  width: 260px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+#modal-message-participants .participant {
+  margin-top: 15px;
+}
+#modal-message-participants .participant strong {
+  margin-left: 12px;
+}
+/* -------------------------------------------- */
+/* newMessageButton widget styling */
+/* -------------------------------------------- */
+.btn.new-message-button {
+  position: relative;
+  padding: 4px 12px;
+  border-radius: 50%;
+}
+.btn.new-message-button:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  border-top: 8px solid #456CA8;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  transform: rotate(22deg) skew(-14deg);
+}
+.btn.new-message-button:hover:after,
+.btn.new-message-button:focus:after {
+  border-top-color: #3e6096;
+}
+.btn.new-message-button.reversed {
+  background-color: #fff !important;
+  color: #456CA8 !important;
+}
+.btn.new-message-button.reversed:after {
+  border-top: 8px solid #fff;
+}
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* users-images widget styling */
+/* -------------------------------------------- */
+.header_users-images {
+  display: inline-block;
+}
+.header_users-images .users-images {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.header_users-images .users-images .btn {
+  width: 41px;
+  height: 41px;
+}
+.header_users-images .users-images span {
+  display: inline-block;
+}
+.header_users-images .users-images span img,
+.header_users-images .users-images .btn {
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.header_users-images .users-images .participant-modal-link {
+  display: contents;
+}
+.header_users-images .users-images .participant-modal-link > *:not(:first-child),
+.header_users-images .users-images > *:not(:first-child) {
+  margin-right: -10px;
+}
+@media screen and (max-width: 991px) {
+  .header_users-images .users-images .btn {
+    display: none;
+  }
+}
+.panel_users-images {
+  --img-num-1-width: 59px;
+  --img-num-2-width: 42px;
+  --img-num-3-width: 36px;
+  --img-num-4-width: 34px;
+  position: relative;
+}
+.panel_users-images .users-images {
+  display: inline-grid;
+  grid-template-columns: 30px 30px;
+  grid-template-rows: 30px 30px;
+}
+.panel_users-images .users-images.img-num-1 .btn {
+  width: var(--img-num-1-width);
+  height: var(--img-num-1-width);
+}
+.panel_users-images .users-images.img-num-2 .btn {
+  width: var(--img-num-2-width);
+  height: var(--img-num-2-width);
+}
+.panel_users-images .users-images.img-num-2 > *:first-child {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: end;
+}
+.panel_users-images .users-images.img-num-2 > *:last-child {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  align-self: end;
+}
+.panel_users-images .users-images.img-num-3 .btn {
+  width: var(--img-num-3-width);
+  height: var(--img-num-3-width);
+}
+.panel_users-images .users-images.img-num-3 > *:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.panel_users-images .users-images.img-num-3 > *:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: end;
+}
+.panel_users-images .users-images.img-num-3 > *:nth-child(3) {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  align-self: end;
+  justify-self: center;
+}
+.panel_users-images .users-images.img-num-4-or-more .btn {
+  width: var(--img-num-4-width);
+  height: var(--img-num-4-width);
+}
+.panel_users-images .users-images.img-num-4-or-more > *:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.panel_users-images .users-images.img-num-4-or-more > *:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: end;
+}
+.panel_users-images .users-images.img-num-4-or-more > *:nth-child(3) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  align-self: end;
+  justify-self: center;
+}
+.panel_users-images .users-images.img-num-4-or-more > *:nth-child(4) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  align-self: end;
+  justify-self: end;
+}
+.panel_users-images .users-images span {
+  display: inline-block;
+}
+.panel_users-images .users-images:not(.img-num-1) span img {
+  border: 2px solid var(--li-bg-color);
+  border-radius: 50%;
+}
+.panel_users-images .users-images .btn {
+  border-radius: 50%;
+  border: 2px solid var(--li-bg-color);
+}
+.panel_users-images .label {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 1px solid var(--li-bg-color);
+  border-radius: 50%;
+}
+.panel_users-images .label:empty {
+  display: inline-block;
+}
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* notification widget styling */
+/* -------------------------------------------- */
+#dropdown-mail-messages {
+  width: 343px !important;
+  margin-left: -158px !important;
+  padding: 0;
+  border-radius: 8px;
+  border: solid 1px #e9e9e9;
+}
+#dropdown-mail-messages .dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+  padding: 18px 22px;
+  color: #1c1c1c;
+}
+#dropdown-mail-messages .dropdown-header .arrow {
+  top: -11px;
+}
+#dropdown-mail-messages .media-list {
+  /* -------------------------------------------- */
+  /* message preview styling */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+}
+#dropdown-mail-messages .media-list li {
+  padding: 15px 22px;
+  border-left: none;
+  --li-bg-color: #fff;
+}
+#dropdown-mail-messages .media-list li:hover,
+#dropdown-mail-messages .media-list li.selected {
+  --li-bg-color: #e2f5fd;
+  background-color: var(--li-bg-color);
+  border-left: none;
+}
+#dropdown-mail-messages .media-list li .media {
+  display: flex;
+  align-items: center;
+}
+#dropdown-mail-messages .media-list li .media .media-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+#dropdown-mail-messages .media-list li .media .media-heading .time {
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+#dropdown-mail-messages .media-list li .media .media-left,
+#dropdown-mail-messages .media-list li .media .media > .pull-left {
+  margin-right: 14px;
+}
+#dropdown-mail-messages .media-list li .media .sep {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 6px;
+  color: #b9b9b9;
+}
+#dropdown-mail-messages .media-list li .media h4,
+#dropdown-mail-messages .media-list li .media p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 17px;
+}
+#dropdown-mail-messages .media-list li .media h4 {
+  font-weight: 600;
+  color: #000;
+}
+#dropdown-mail-messages .media-list li .media p {
+  font-weight: 400;
+  color: #4b4b4b;
+}
+#dropdown-mail-messages .media-list li .media .time {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+#dropdown-mail-messages li:last-child {
+  margin-bottom: 0;
+}
+#dropdown-mail-messages .dropdown-footer {
+  margin: 0;
+}
+#dropdown-mail-messages .dropdown-footer .btn {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 19px;
+  padding: 18px 0;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: #1c1c1c;
+}
+#dropdown-mail-messages hr {
+  margin: 0;
+  border-top-color: #d4d4d4;
+}
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Miscellaneous styling */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*# sourceMappingURL=humhub.mail.css.map */

@@ -1,0 +1,58 @@
+
+/* -------------------------------------------- */
+/* notification widget styling */
+/* -------------------------------------------- */
+
+#dropdown-mail-messages {
+
+  width: 343px !important;
+  margin-left: -158px !important;
+  padding: 0;
+  border-radius: @panel-border-radius;
+  border: solid 1px @panel-border-color;
+
+  .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    padding: 18px 22px;
+    color: @panel-text-color;
+
+    .arrow {
+      top: -11px;
+    }
+  }
+
+  .media-list {
+    @import "../mail/_messagePreview";
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  .dropdown-footer {
+    margin: 0;
+    .btn {
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      line-height: 19px;
+      padding: 18px 0;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      color: @panel-text-color;
+    }
+  }
+
+  hr {
+    margin: 0;
+    border-top-color: @hr-color;
+  }
+
+}
+
+/* -------------------------------------------- */

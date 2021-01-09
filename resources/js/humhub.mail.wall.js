@@ -77,6 +77,10 @@ humhub.module('mail.wall', function(module, require, $) {
         });
         var that = this;
         setTimeout(function() {that.scrollToBottom()});
+
+        this.$.find('#replyform-message').on('keydown', '.humhub-ui-richtext', function () {
+          that.updateSize();
+        });
     };
 
     ConversationView.prototype.reload = function() {
@@ -158,7 +162,6 @@ humhub.module('mail.wall', function(module, require, $) {
         var $list = this.getListNode();
         $list.animate({scrollTop : $list[0].scrollHeight});
         this.updateSize();
-
     };
 
     ConversationView.prototype.updateSize = function() {
@@ -166,9 +169,17 @@ humhub.module('mail.wall', function(module, require, $) {
             return;
         }
 
+        var responsiveWidth = 991;
+
         var formHeight = $('.mail-message-form').height();
-        var max_height = (window.innerHeight - this.$.position().top - formHeight - 95) + 'px';
-        this.$.find('.conversation-entry-list').css('max-height', max_height);
+        var height = (window.innerHeight - this.$.position().top - formHeight - 95);
+        if (window.innerWidth <= responsiveWidth) {
+          this.$.find('.conversation-entry-list').css('max-height', '');
+          this.$.find('.conversation-entry-list').css('height', height + 26 + 'px');
+        } else {
+          this.$.find('.conversation-entry-list').css('height', '');
+          this.$.find('.conversation-entry-list').css('max-height', height);
+        }
     };
 
     ConversationView.prototype.getListNode = function() {
@@ -279,6 +290,7 @@ humhub.module('mail.wall', function(module, require, $) {
     var loadMessage = function(evt) {
         if($('#mail-conversation-root').length) {
             getRootView().loadMessage(evt);
+            toggleDiscussion(true);
         } else {
             client.pjax.redirect(evt.url);
         }
@@ -296,6 +308,16 @@ humhub.module('mail.wall', function(module, require, $) {
         });
     };
 
+    function toggleDiscussion(open) {
+      if (open !== true){
+        $('#mail-conversation-root').parent().removeClass('opened');
+        $('#mail-conversation-overview').parent().removeClass('closed');
+      } else {
+        $('#mail-conversation-root').parent().removeClass('opened').addClass('opened');
+        $('#mail-conversation-overview').parent().removeClass('closed').addClass('closed');
+      }
+    }
+
    module.export({
        init: init,
        ConversationView: ConversationView,
@@ -304,5 +326,6 @@ humhub.module('mail.wall', function(module, require, $) {
        loadMessage: loadMessage,
        submitEditEntry: submitEditEntry,
        deleteEntry: deleteEntry,
+       toggleDiscussion: toggleDiscussion,
    });
 });
