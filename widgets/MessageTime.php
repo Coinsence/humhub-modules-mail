@@ -57,7 +57,7 @@ class MessageTime extends Widget
      * @return string
      */
     public function renderTimeOnly() {
-        return '<span class="time"><span title="' . $this->timestamp . '">' . Date('H:i', $this->timestamp) . '</span></span>';
+        return '<span class="time"><span title="' . $this->timestamp . '">' . Yii::$app->formatter->asDate($this->timestamp, 'php:H:i') . '</span></span>';
     }
 
     /**
@@ -66,7 +66,7 @@ class MessageTime extends Widget
      * @return string
      */
     public function renderDayNameOnly() {
-        return '<span class="time"><span title="' . $this->timestamp . '">' . Date('l', $this->timestamp) . '</span></span>';
+        return '<span class="time"><span title="' . $this->timestamp . '">' . Yii::$app->formatter->asDate($this->timestamp, 'php:l') . '</span></span>';
     }
 
     /**
@@ -75,6 +75,6 @@ class MessageTime extends Widget
      * @return string
      */
     public function renderDate() {
-        return '<span class="time"><span title="' . $this->timestamp . '">' . Date('M d, Y', $this->timestamp) . '</span></span>';
+        return '<span class="time"><span title="' . $this->timestamp . '">' . Yii::$app->formatter->asDate($this->timestamp, 'php:M d, Y') . '</span></span>';
     }
 }
