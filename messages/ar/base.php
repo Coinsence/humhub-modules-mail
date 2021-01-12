@@ -46,7 +46,7 @@ return [
     'Updated At' => '',
     'Updated By' => '',
     'User' => 'المستخدم',
-    'Write a message...' => '',
+    'Write a message...' => '...اكتب رسالة',
     'You are not allowed to start a conversation with this user.' => '',
     'You\'ve exceeded your daily amount of new conversations.' => '',
     'Delete' => 'حذف',

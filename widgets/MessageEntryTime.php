@@ -86,7 +86,7 @@ class MessageEntryTime extends Widget
      * @return string
      */
     public function renderTimeOnly() {
-        $date = Date('H:i', $this->timestamp);
+        $date = Yii::$app->formatter->asDate($this->timestamp, 'php:H:i');
 
         if ($this->raw) {
             return $date;
@@ -116,7 +116,7 @@ class MessageEntryTime extends Widget
      * @return string
      */
     public function renderDayNameOnly() {
-        $date = Date('l', $this->timestamp);
+        $date = Yii::$app->formatter->asDate($this->timestamp, 'php:l');
 
         if ($this->raw) {
             return $date;
@@ -131,7 +131,7 @@ class MessageEntryTime extends Widget
      * @return string
      */
     public function renderDate() {
-        $date = Date('M d, Y', $this->timestamp);
+        $date = Yii::$app->formatter->asDate($this->timestamp, 'php:M d, Y');
 
         if ($this->raw) {
             return $date;
