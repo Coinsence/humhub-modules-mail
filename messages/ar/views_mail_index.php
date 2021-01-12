@@ -17,7 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'New' => '@@جديد@@',
+    'New' => 'جديد',
     'Conversations' => 'المحادثات',
     'There are no messages yet.' => 'لا توجد رسائل',
 ];

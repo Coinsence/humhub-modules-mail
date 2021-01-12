@@ -17,11 +17,11 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Add user' => '@@اضافة مستخدم@@',
-    'Send' => '@@ارسل@@',
-    '<strong>Confirm</strong> deleting conversation' => '<strong>تأكيد</strong> حذف المحادثة',
-    '<strong>Confirm</strong> leaving conversation' => '<strong>تأكيد</strong> مغادرة المحادثة',
-    '<strong>Confirm</strong> message deletion' => '<strong>تأكيد</strong> حذف الرسالة',
+    'Add user' => 'اضافة مستخدم',
+    'Send' => 'ارسل',
+    '<strong>Confirm</strong> deleting conversation' => 'تأكيد حذف المحادثة',
+    '<strong>Confirm</strong> leaving conversation' => 'تأكيد مغادرة المحادثة',
+    '<strong>Confirm</strong> message deletion' => 'تأكيد حذف الرسالة',
     'Add users to conversation' => 'إضافة مستخدمين إلى المحادثة',
     'Cancel' => 'الغاء',
     'Delete' => 'حذف',

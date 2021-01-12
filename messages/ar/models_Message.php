@@ -1,5 +1,5 @@
 <?php
 return array (
-  'New message from {senderName}' => 'رسالة جديدة من {senderName}',
-  'and {counter} other users' => 'و عدد {counter} مستخدم',
+  'New message from {senderName}' => '{senderName} رسالة جديدة من',
+  'and {counter} other users' => 'مستخدمين آخرين {counter} و',
 );

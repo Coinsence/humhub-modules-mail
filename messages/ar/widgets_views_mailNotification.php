@@ -17,9 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Messages' => '@@الرسائل@@',
-    'New message' => '@@رسالة جديدة@@',
-    'Show all messages' => '@@عرض كل الرسائل@@',
+    'Messages' => 'الرسائل',
+    'New message' => 'رسالة جديدة',
+    'Show all messages' => 'عرض كل الرسائل',
     'Conversations' => 'المحادثات',
     'See all conversations' => 'مشاهدة جميع المحادثات',
 ];
