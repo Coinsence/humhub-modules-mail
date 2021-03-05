@@ -155,7 +155,7 @@
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  background-color: #1C9C7F;
+  background-color: #3cbeef;
 }
 @media screen and (max-width: 991px) {
   .mail .chooser {
@@ -294,7 +294,7 @@
 }
 .mail .messages .media-list .media.me .media-body .content {
   margin-right: 32px;
-  background-color: #1C9C7F;
+  background-color: #3cbeef;
 }
 .mail .messages .media-list .media.me .media-body .content p {
   color: #fff;
@@ -375,7 +375,7 @@
 .mail .messages .mail-message-form form .reply-button {
   font-size: 24px;
   opacity: 0.5;
-  color: #1C9C7F;
+  color: #3cbeef;
 }
 @media screen and (max-width: 991px) {
   .mail .messages {
@@ -476,18 +476,18 @@
   position: absolute;
   left: 0;
   bottom: -3px;
-  border-top: 8px solid #1C9C7F;
+  border-top: 8px solid #3cbeef;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   transform: rotate(22deg) skew(-14deg);
 }
 .btn.new-message-button:hover:after,
 .btn.new-message-button:focus:after {
-  border-top-color: #18866d;
+  border-top-color: #24b6ed;
 }
 .btn.new-message-button.reversed {
   background-color: #fff !important;
-  color: #1C9C7F !important;
+  color: #3cbeef !important;
 }
 .btn.new-message-button.reversed:after {
   border-top: 8px solid #fff;
