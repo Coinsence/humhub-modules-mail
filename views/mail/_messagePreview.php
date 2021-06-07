@@ -30,7 +30,7 @@ $message = $userMessage->message;
                 <div class="media-body text-break">
                     <div class="media-heading">
                         <?php if (count($message->users) == 2) : ?>
-                        <h4 class="text"><?= Html::encode(Helpers::truncateText($message->getRecepients()[0]->getDisplayName(), 20)); ?><br><?= Html::encode(Helpers::truncateText($message->title, 20)); ?></h4>
+                        <h4 class="text"><?= Html::encode(Helpers::truncateText($message->getRecepients()[0]->getDisplayName(), 20)); ?><br><?= Html::encode(Helpers::truncateText($message->title, 40)); ?></h4>
                         <?php else : ?>
                         <h4 class="text"><?= Html::encode(Helpers::truncateText($message->title, 20)); ?></h4>
                         <?php endif; ?>
